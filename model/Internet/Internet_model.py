@@ -1,10 +1,13 @@
 '''联网搜索的RAG检索模型类'''
+from agents.base import AgentBase
 from model.model_base import Modelbase
 from model.model_base import ModelStatus
 
 import os
 from env import get_app_root
 
+from agents.universe_rag_agent import prompt as universal_rag_prompt
+from langchain_oceanbase.vectorstores import OceanbaseVectorStore
 from langchain_community.embeddings import ModelScopeEmbeddings
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_community.document_loaders import DirectoryLoader, MHTMLLoader, UnstructuredHTMLLoader
@@ -46,9 +49,10 @@ class InternetModel(Modelbase):
         # 创建一个 RecursiveCharacterTextSplitter 对象，用于将文档分割成块，chunk_size为最大块大小，chunk_overlap块之间可以重叠的大小
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
         splits = text_splitter.split_documents(docs)
-        
+
+
         # 使用 FAISS 创建一个向量数据库，存储分割后的文档及其嵌入向量
-        vectorstore = FAISS.from_documents(documents=splits, embedding=self._embedding)
+        vectorstore = OceanbaseVectorStore.from_documents(documents=splits, embedding=self._embedding)
         # 将向量存储转换为检索器，设置检索参数 k 为 6，即返回最相似的 6 个文档
         self._retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
         

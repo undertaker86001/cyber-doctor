@@ -14,7 +14,7 @@ model:
   # 编码模型配置，仅在要使用知识库功能时需要配置
   embedding: 
     # 构建知识库时用于文本向量化的modelscope模型路径，windows下默认安装路径如下，设置为其他路径会重新下载到该路径
-    model-path: C:/Users/<your username>/.cache/modelscope/hub/
+    model-path: /Users/windwheel/.cache/modelscope/hub/
     # modelscope模型名称和版本，可在modelscope官网查看，会自动下载，注意斜杠方向”/“
     model-name: iic/nlp_corom_sentence-embedding_chinese-base
     model-version: v1.1.0
@@ -23,7 +23,7 @@ model:
 # 知识图谱配置。仅在要使用知识图谱功能时需要配置
 database:
   neo4j:
-    url: bolt://localhost:7687
+    url: localhost:7687
     database: neo4j
     username: neo4j
     # 注意数字用引号引起来

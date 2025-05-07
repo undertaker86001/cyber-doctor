@@ -1,4 +1,6 @@
 '''本地知识库的RAG检索模型类'''
+from langchain_oceanbase import OceanbaseVectorStore
+
 from model.model_base import Modelbase
 from model.model_base import ModelStatus
 from config.config import Config
@@ -168,8 +170,8 @@ class Retrievemodel(Modelbase):
         )
         splits = text_splitter.split_documents(docs)
 
-        # 使用 FAISS 创建一个向量数据库，存储分割后的文档及其嵌入向量
-        vectorstore = FAISS.from_documents(documents=splits, embedding=self._embedding)
+        # 使用 Oceanbase 创建一个向量数据库，存储分割后的文档及其嵌入向量
+        vectorstore = OceanbaseVectorStore.from_documents(documents=splits, embedding=self._embedding)
         # 将向量存储转换为检索器，设置检索参数 k 为 6，即返回最相似的 6 个文档
         self._retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
 
@@ -295,7 +297,7 @@ class Retrievemodel(Modelbase):
             splits = text_splitter.split_documents(docs)
 
             # 为该用户构建向量库
-            vectorstore = FAISS.from_documents(
+            vectorstore = OceanbaseVectorStore.from_documents(
                 documents=splits, embedding=self._embedding
             )
             user_retriever = vectorstore.as_retriever(search_kwargs={"k": 6})

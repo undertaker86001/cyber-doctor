@@ -1,25 +1,5 @@
-<div align="center">
- <img src="README/bot.jpg" width="200" />
-</div>
+## 医药大模型
 
-<h1 align="center">「赛博华佗」🩺 cyber-doctor 你的健康小管家</h1>
-
-**语言**
-
-- [English](./README_en.md)
-- [中文](./README.md)
-
----
-
-![](https://img.shields.io/github/stars/Warma10032/cyber-doctor?style=social)
-![](https://img.shields.io/github/forks/Warma10032/cyber-doctor?style=social)
-![](https://img.shields.io/github/contributors/Warma10032/cyber-doctor)
-![](https://img.shields.io/github/issues/Warma10032/cyber-doctor)
-![](README/License-GPLv3-blue.svg)
-
-## 项目演示视频
-
-https://www.bilibili.com/video/BV1CU2aYpEn2
 
 ## 项目背景
 
@@ -283,42 +263,3 @@ cyber-doctor/
 └── resource/                       # 资源文件目录，存放图片等静态资源
 ```
 
-## 项目现状
-
-项目从原本Django+vue框架中分离，在开发时我们是设计了一个简单的前后端框架和界面的。可以提供简单的登录、注册、创建用户自己的知识库和可交互的对知识库进行增删改查的功能。但由于该部分不是本人负责，我对如何教大家如何配置该部分代码还不是很懂，各位如果希望本项目能提供相关功能，欢迎反馈，我再对项目进行更新。
-
-你可能发现了本项目类似一个大杂烩，将众多功能缝合到了一起。但其实在单独的每个功能实现上，还有很大的优化空间。
-
-例如对知识图谱的处理，目前只是匹配所有实体和与该实体直接相连的关系。其实可以增添对关系类型的判断等，优化知识图谱对大模型输出的影响，避免干扰大模型的输出。这些将在我有时间的时候进行更新，也欢迎你的意见与建议，敬请期待吧。
-
-## 贡献者
-
-感谢以下成员对项目的贡献
-
-团队成员：
-
-- [YM](https://github.com/YM556)
-- [L-MARK](https://github.com/L-MARK)
-- [Goku-30](https://github.com/Goku-30)
-- [laobaishui](https://github.com/laobaishui)
-
-开源领域大神（除了我）：
-
-<a href="https://github.com/Warma10032/cyber-doctor/contributors">
-  <img src="https://contrib.rocks/image?repo=Warma10032/cyber-doctor" /></a>
-
-## 参考项目
-
-本项目参考了以下开源项目，感谢他／她们的付出
-
-- [meet-libai](https://github.com/BinNong/meet-libai)
-
-## Star History
-
-<a href="https://star-history.com/#warma10032/cyber-doctor&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=warma10032/cyber-doctor&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=warma10032/cyber-doctor&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=warma10032/cyber-doctor&type=Date" />
- </picture>
-</a>

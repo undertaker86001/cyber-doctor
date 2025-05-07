@@ -30,7 +30,7 @@ def generate(ppt_content: Dict) -> str:
     # PPT首页
     slide = ppt.slides.add_slide(ppt.slide_layouts[0])  # title&subtitle layout
     slide.placeholders[0].text = ppt_content["title"]
-    slide.placeholders[1].text = "--来自「赛博华佗」"
+    slide.placeholders[1].text = "欢迎您进行提问，我会尽力为您提供支持"
 
     # 内容页
     print(f"总共{len(ppt_content['pages'])}页")
